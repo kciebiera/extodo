@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  if user
+    p Welcome #{user} in ExTodo 
+      a(href="logout") logout
+    a(href="todos") your Todos
+  else
+    p Login first
+    form(method="post")
+      input(type="text" name="login")
+      input(type="submit", value="In")

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Your Todos
+  ol
+    each val in todos
+      - var url = "todos/del/" + val.id
+      li #{val.todo} 
+        a(href= url) remove
+  form(method="post")
+    input(type="text" name="todo")
+    input(type="submit", value="add")
+  a(href="/logout") logout
+  
