@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   // TO JEST LOGOWANIE
-  req.db.get("SELECT * FROM users WHERE username = '" + req.body.login + "'", 
+  req.db.get("SELECT * FROM users WHERE username = ?", [req.body.login],
     function(err, row) {
       if (row != undefined) {
         req.session.login = req.body.login;
