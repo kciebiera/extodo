@@ -1,5 +1,8 @@
+var cookieParser = require('cookie-parser')
+
 var createError = require('http-errors');
 var express = require('express');
+
 var path = require('path');
 var logger = require('morgan');
 var session = require('express-session')
@@ -8,7 +11,9 @@ var sqlite3 = require('sqlite3').verbose()
 var indexRouter = require('./routes/index');
 var todosRouter = require('./routes/todos');
 
+
 var app = express();
+app.use(cookieParser())
 
 // przygotowanie bazy danych
 var db = new sqlite3.Database(':memory:')

@@ -10,5 +10,6 @@ block content
   form(method="post")
     input(type="text" name="todo")
     input(type="submit", value="add")
+    input(type="hidden", name="_csrf", value=csrfToken)
   a(href="/logout") logout
   
