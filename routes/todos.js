@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/del/:id', function (req, res) {
-  req.db.run("DELETE FROM todos WHERE id = ?" [req.params.id],
+  req.db.run("DELETE FROM todos WHERE id = ?", [req.params.id],
     () => res.redirect('/todos')
   );
 });
